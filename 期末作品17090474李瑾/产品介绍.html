@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border:0;
+        }
+        ol, ul ,li{list-style: none;} 
+        .cl{
+            clear:both;
+        }
+        .fl{
+            float:left;
+        }
+        .fr{
+            float:right;
+        }
+        body{
+            /*background: #2d383e url(images/bgindex.jpg) repeat-x;*/
+            background: url(images/5-120601100001.jpg) repeat-x;
+        }
+        #nav{
+            width: 1050px;
+            height: 150px;
+            margin: 0 auto;
+            background-image: url(images/linkbg.jpg);
+        }
+        #nav ul{
+            width: 1050px;
+            height: 150px;
+        }
+        #nav ul li{
+            list-style-type: none;
+            float: left;
+            width: 150px;
+            height:150px;
+            line-height: 150px;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.0) url(images/linkr.gif) no-repeat 0 50% ;
+        }
+        #nav ul li:first-child{
+            background: rgba(0, 0, 0, 0.0) ;
+        }
+        #nav ul li a{
+            font-size: 16px;
+            text-decoration: none;
+            color: #fff;
+        }
+        #nav ul li a:hover{
+            color: #ff0;
+        }
+        #slide{
+            width: 1200px;
+            height: 450px;
+            margin: 0 auto;
+            background-color: #ccc;
+            border-radius:10px;
+        }
+        #img{
+            width: 1200px;
+            height: 450px;
+            overflow:hidden;
+            border-radius:10px;
+        }
+        #arrow{
+            height: 50px;
+            /*background-color: #ccc;*/
+            position:relative;
+            top:-250px;
+        }
+        #previous,#next{
+            width: 30px;
+            height: 50px;
+            background-color: rgba(0, 0, 0, 0.1);
+            font-size:40px;
+            line-height: 50px;
+            text-align:center;
+            cursor: pointer;
+        }
+        #previous{
+            float:left;
+        }
+        #next{
+            float:right;
+        }
+        #circle{
+            height: 20px;
+            position:relative;
+            top:-80px;
+        }
+        #circle h1{
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background-color: #000;
+            color:#fff;
+            font-size:12px;
+            text-align: center;
+            float:left;
+            margin:0 0 0 3px;
+            cursor: pointer;
+        }
+        #circle h1.red{
+            background-color: #f00;
+        }
+        #main{
+            width: 1200px;
+            height: 1140px;
+            margin:-20px auto auto auto;
+            background-color: #fff;
+        }
+        #photo{
+            width: 1200px;
+            height: 180px;
+            border-top:1px solid 20px;
+            padding: 0;
+            background-color: #fff;
+            margin:-20px auto 80px auto;
+        }
+        #photo img{
+            margin:0 auto;
+            /*top:-50px;*/
+        }
+        #estate{
+            width: 1200px;
+            height: 320px;
+            background-color: #fff;
+            float: left;
+            margin: 0;
+            padding: 0;
+            border-top:1px solid 20px;
+        }
+        #estate div{
+            height:400px;
+            width:1200px;
+            margin: 0 auto;
+            color:#fff;
+            border-top: 1px solid #666 ;
+        }
+        #estate div .img{
+            float: right;
+            border-radius:10px;
+            margin: 10px 20px auto auto;
+        }
+        #estate div .img:hover{
+            box-shadow:10px 8px 5px rgba(0, 0, 0, 0.5);
+        }
+        #estate div ul{
+            float: left;
+            width:750px;
+            margin:20px 0 0 0;
+        }
+        #estate div ul li{
+            list-style-type: none;
+            font-size: 16px;
+            line-height: 30px;
+            color:#666;
+            text-indent: 2em;
+        }
+        #estate div ul li:nth-child(-n+3){
+            color: #fff;
+        }
+        #estate1{
+            width: 1200px;
+            height: 320px;
+            background-color: #fff;
+            float: left;
+            margin: 0;
+            padding: 0;
+            border-top:1px solid 20px;
+        }
+        #estate1 div{
+            height:400px;
+            width:1200px;
+            margin: 0 auto;
+            color:#fff;
+            border-top: 1px solid #666 ;
+        }
+        #estate1 div .img{
+            float: left;
+            border-radius:10px;
+            margin: 10px 20px auto auto;
+        }
+        #estate1 div .img:hover{
+            box-shadow:10px 8px 5px rgba(0, 0, 0, 0.5);
+        }
+        #estate1 div ul{
+            float: left;
+            width:750px;
+            margin:20px 0 0 0;
+        }
+        #estate1 div ul li{
+            list-style-type: none;
+            font-size: 16px;
+            line-height: 30px;
+            color:#666;
+            text-indent: 2em;
+        }
+        #estate1 div ul li:nth-child(-n+3){
+            color: #fff;
+        }
+        #estate2{
+            width: 1200px;
+            height: 320px;
+            background-color: #fff;
+            float: left;
+            margin: 0;
+            padding: 0;
+            border-top:1px solid 20px;
+        }
+        #estate2 div{
+            height:400px;
+            width:1200px;
+            margin: 0 auto;
+            color:#fff;
+            border-top: 1px solid #666 ;
+        }
+        #estate2 div .img{
+            float: right;
+            border-radius:10px;
+            margin: 20px 20px auto auto;
+        }
+        #estate2 div .img:hover{
+            box-shadow:10px 8px 5px rgba(0, 0, 0, 0.5);
+        }
+        #estate2 div ul{
+            float: left;
+            width:750px;
+            margin:20px 0 0 0;
+        }
+        #estate2 div ul li{
+            list-style-type: none;
+            font-size: 16px;
+            line-height: 30px;
+            color:#666;
+            text-indent: 2em;
+        }
+        #estate2 div ul li:nth-child(-n+3){
+            color: #fff;
+        }
+        #footer{
+            width: 1200px;
+            height: 150px;
+            margin: 0 auto;
+            background-color: #fff;
+        }
+        #footer ul{
+            margin:0 0 0 20px;
+            border-right:1px solid #ccc;
+        }
+        #footer ul li{
+            list-style-type: none;
+            font-size: 16px;
+            line-height: 25px;
+            color: #000;
+            text-align: center;
+            font-family:"微软雅黑";
+        }
+        #footer ul li:first-child{
+            font-weight:bolder;    
+        }
+        #footer ul li:nth-child(n+4){
+            color: #ccc;
+            font-size:14px;
+        }
+    </style>
+</head>
+<body>
+    <div id="nav">
+        <ul>
+            <li><a href="#">首页</a></li>
+            <li><a href="#">品牌</a></li>
+            <li><a href="#">产品</a></li>
+            <li><img src="images/uugai.com-15475536322002.png" alt="" /></li>
+            <li><a href="#">新闻</a></li>
+            <li><a href="#">联系</a></li>
+            <li><a href="#">加盟</a></li>
+        </ul>
+    </div>
+    <div id="slide">
+        <div id="img">
+            <img src="images/p1.jpg" alt="" />
+            <img src="images/p2.jpg" alt="" />
+        </div>
+        <div id="arrow">
+            <div id="previous"><</div>
+            <div id="next">></div>
+        </div>
+        <div id="circle">
+            <h1>1</h1>
+            <h1>2</h1>
+        </div>
+    </div>
+    <script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var n=0;//记录当前图片索引号
+        function slideImg(){
+            n++;
+            if(n>$("#circle h1").length-1){
+                    n=0;
+            }
+            $("#img img").hide();//隐藏所有图片
+            $("#img img").eq(n).fadeIn(500);//显示索引图片
+            $("#circle h1").removeClass("red");//去掉所有red类
+            $("#circle h1").eq(n).addClass("red");                
+        }
+        var interval=setInterval(slideImg,5000);
+        $(document).ready(function(){
+            //点击圆点图片变换
+            $("#circle h1").click(function(event){
+                n=$("#circle h1").index(this);//获取索引值
+                $("#img img").hide();//隐藏所有图片
+                $("#img img").eq(n).fadeIn(500);//显示索引图片
+                $("#circle h1").removeClass("red");//去掉所有red类
+                $("#circle h1").eq(n).addClass("red");//索引值加类
+            });
+            //点击左箭头图片变换
+            $("#previous").click(function(event){
+                n--;
+                if(n<0){
+                    n=$("#circle h1").length-1;
+                }
+                $("#img img").hide();//隐藏所有图片
+                $("#img img").eq(n).fadeIn(500);//显示索引图片
+                $("#circle h1").removeClass("red");//去掉所有red类
+                $("#circle h1").eq(n).addClass("red");//索引值加类
+            });
+            $("#next").click(function(event){
+                n++;
+                if(n>$("#circle h1").length-1){
+                    n=0;
+                }
+                $("#img img").hide();//隐藏所有图片
+                $("#img img").eq(n).fadeIn(500);//显示索引图片
+                $("#circle h1").removeClass("red");//去掉所有red类
+                $("#circle h1").eq(n).addClass("red");//索引值加类
+            });
+        });
+    </script>
+<div id="main">
+        <div id="photo">
+        <img src="images/photo.png" alt="" />
+    </div> 
+        <div id="estate">
+            <div><img class="img" src="images/m0.jpg" alt="" />
+                <ul>
+                    <li>     dsugufihasu               </li>
+                    <li>jsdhfuihsdhag</li>
+                    <li>      fsgaufigsua              </li>
+                    <li>脏脏包是一款起酥面包，其包裹着特制香醇的巧克力馅儿，外面淋上一层巧克力酱，再洒落可可粉，看起来确实脏脏的，吃完以后嘴巴和手上会沾上巧克力而变 " 脏 " 因而得名 " 脏脏包 "。因其口感极好，网上爆出在实体店购买时经常需要排队，最终成为一种供不应求的网红爆款小吃。</li>
+                </ul>
+            </div> 
+        </div>
+        <div id="estate1">
+            <div><img class="img" src="images/m1.jpg" alt="" />
+                <ul>
+                    <li>     dsugufihasu               </li>
+                    <li>jsdhfuihsdhag</li>
+                    <li>      fsgaufigsua              </li>
+                    <li>马卡龙，又称作玛卡龙、法式小圆饼，是一种用蛋白、杏仁粉、白砂糖和糖霜制作，并夹有水果酱或奶油的法式甜点。口感丰富，外脆内柔，外观五彩缤纷，精致小巧。马卡龙层次感分明，外酥内软。咬一口，首先尝到的是很薄但酥脆的外壳，接着是又软又绵密的内层。和奶油的质感不同，杏仁饼的韧劲将馅料撑起，又给软腻的馅料增加了嚼劲。</li>
+                </ul>
+            </div> 
+        </div>
+                <div id="estate2">
+            <div><img class="img" src="images/m2.jpg" alt="" />
+                <ul>
+                    <li>     dsugufihasu               </li>
+                    <li>jsdhfuihsdhag</li>
+                    <li>      fsgaufigsua              </li>
+                    <li>20世纪初期，意大利人阿奇布夏发明蒸汽压力咖啡机的同时，也发展出了卡布奇诺咖啡。卡布奇诺是一种加入以同量的意大利特浓咖啡和蒸汽泡沫牛奶相混合的意大利咖啡。它有一种让人无法抗拒的独特魅力，起初闻起来时味道很香，第一口喝下去时，可以感觉到大量奶泡的香甜和酥软，第二口可以真正品尝到咖啡豆原有的苦涩和浓郁，最后当味道停留在口中，你又会觉得多了一份香醇和隽永……</li>
+                </ul>
+            </div> 
+        </div>
+    <div id="footer">
+    <img src="images/line.gif" alt="" />
+        <ul>
+            <li> 公司总部</li>
+            <li>地址：河南省郑州市金水区文化路与北环交叉口瀚海·北金商务A座16楼</li>
+            <li>座机：0371-89916888</li>
+            <li>Copyright © 2019 OCOCO International Co., Ltd.</li>
+            <li>沪ICP备14047229号</li>
+        </ul>
+    </div>
+</body>
+</html>
